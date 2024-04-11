@@ -8,7 +8,7 @@ function Header() {
     <Navbar style={{ backgroundColor: "#562664" }}>
       <Container>
         <Navbar.Brand href="#home" style={{ color: "white" }}>
-          Ultimate Shopping List
+          Ultimate Shopping List V3
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
