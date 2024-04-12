@@ -6,6 +6,9 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { sortableContainer, sortableElement } from "react-sortable-hoc";
 import { arrayMoveMutable } from "array-move";
+import { FaTrash } from "react-icons/fa";
+import { FaSave } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 
 const SortableItem = sortableElement(
   ({ items, item, index, onEdit, onDelete }) => {
@@ -112,14 +115,23 @@ const SortableItem = sortableElement(
             <Button
               variant="success"
               onClick={() => saveEditing(index, itemName, itemQuantity)}
+              style={{ width: "100px" }}
             >
-              Save
+              <FaSave />
             </Button>
-            <Button variant="danger" onClick={deleteEditing}>
-              Delete
+            <Button
+              variant="danger"
+              onClick={deleteEditing}
+              style={{ width: "100px" }}
+            >
+              <FaTrash /> {/* This will render the trash icon */}
             </Button>
-            <Button variant="secondary" onClick={cancelEditing}>
-              Cancel
+            <Button
+              variant="secondary"
+              onClick={cancelEditing}
+              style={{ width: "100px" }}
+            >
+              <FaTimes /> {/* This will render the cancel icon */}
             </Button>
           </>
         ) : (
@@ -180,7 +192,7 @@ function ShoppingList({ items, onEdit, onDelete }) {
   };
 
   return (
-    <div className="mb-3 px-4 my-5" style={{ width: "70%" }}>
+    <div className="px-4" style={{ width: "70%" }}>
       <div className="d-flex flex-column">
         <ListGroup
           style={{ backgroundColor: "#562664", width: "100%", height: "100px" }}

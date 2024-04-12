@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
+import { FaPlus } from "react-icons/fa";
 
 function ShoppingForm({ addItem, errorMessage }) {
   const [itemName, setItemName] = useState("");
@@ -25,7 +26,7 @@ function ShoppingForm({ addItem, errorMessage }) {
   return (
     <Form onSubmit={handleSubmit}>
       <InputGroup
-        className="mb-3 align-items-start d-flex px-4 my-5"
+        className="mb-3 align-items-start d-flex px-4"
         style={{ width: "70%", height: "60px" }}
       >
         <Form.Control
@@ -48,7 +49,7 @@ function ShoppingForm({ addItem, errorMessage }) {
           type="submit"
           style={{ width: "20%", backgroundColor: "#562664", color: "white" }}
         >
-          Add
+          <FaPlus />
         </Button>
       </InputGroup>
       {errorMessage && (
